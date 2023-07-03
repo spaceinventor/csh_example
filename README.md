@@ -2,17 +2,15 @@
 
 An addin, aping, that is built independent og CSH.
 
-## Addin interface
+## CSP example
 
-### main
+src/main_csp.c illustrates how to create a task that repeatedly calls csp_ping.
+This may be tested by loading it into csh that is setup to connect for instance via zmqproxy.
 
-An addin defines a main function, same as in a program, i.e. int main(int argc, char ** argv).
+## Slash example
 
-The CSH addin load command passes the dynamic library (.so) file name as first argument. The command allows for passing additional arguments.
+src/main_slash.c illustrates how to create a command, in this case aping that calls csp_ping. When loaded into CSH the aping command appear in the set of CSH commands.
 
-### info
-
-The CSH addin info command lists the addins that have been loded. The info function, void info(void), is called for each addin to allow output of addin specific information.
 
 ## Meson.build file
 
@@ -25,18 +23,6 @@ b_lundef=false : All functions from libraries, like csp, are undefined when buil
 All other is the same.
 
 shared_library( ... ) is used to build the library, .so file.
-
-# Example:
-
-The aping example illustrates callback to library functions found in CSH. In this case the csp_ping function is called. 
-
-## Addin task
-
-A task is created that calls csp_ping every two seconds.
-
-## Slash command
-
-The slash command aping is defined as an example of an addin that extends the set of CSH commands.
 
 
 
