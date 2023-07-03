@@ -6,7 +6,7 @@
 #include <slash/optparse.h>
 #include <slash/dflopt.h>
 
-SLASH_SECTION_INIT(addinexample)
+SLASH_SECTION_INIT(slash_addinexample)
 
 static unsigned int node = 16383;
 static unsigned int timeout = 1000;
