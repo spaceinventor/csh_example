@@ -1,7 +1,5 @@
 # CSH addin examples
 
-An addin, aping, that is built independent og CSH.
-
 ## CSP example
 
 src/main_csp.c illustrates how to create a task that repeatedly calls csp_ping.
@@ -23,12 +21,4 @@ b_lundef=false : All functions from libraries, like csp, are undefined when buil
 All other is the same.
 
 shared_library( ... ) is used to build the library, .so file.
-
-
-
-
-
-
-
-
 
