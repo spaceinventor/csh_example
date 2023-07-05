@@ -1,13 +1,23 @@
 # CSH addin examples
 
-## CSP example
+## CSP example, csh_csp
 
 src/main_csp.c illustrates how to create a task that repeatedly calls csp_ping.
-This may be tested by loading it into csh that is setup to connect for instance via zmqproxy.
+In CSH, when adding a CSP interface, like ZMQ while zmqproxy is running, and loading csh_csp, pings are done.
 
-## Slash example
+The addin info command will show statistics.
 
-src/main_slash.c illustrates how to create a command, in this case aping that calls csp_ping. When loaded into CSH the aping command appear in the set of CSH commands.
+To display packets use set csp_print_packet 1.
+
+## Slash example, csh_slash
+
+src/main_slash.c illustrates how to create a command, in this case aping that calls csp_ping. 
+When csh_csp is loaded into CSH the aping command appear in the set of CSH commands.
+
+## Param example, csh_param
+
+src/main_param.c illustrates how to use parameters. Some static RAM and VMEM in RAM parameters are created. 
+When csh_param is loaded into CSH the parameters appear in output from the list command, and set/get works.
 
 
 ## Meson.build file

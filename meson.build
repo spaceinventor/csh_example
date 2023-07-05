@@ -39,7 +39,7 @@ addin_csp_sources = [
 	'src/main_csp.c',
 ]
 
-addin_csp_lib = shared_library('addin_csp',
+addin_csp_lib = shared_library('csh_example_csp',
                          addin_csp_sources,
                          dependencies : [ csp_dep ],
                          link_args : ['-Wl,-Map=cshmodtest.map', '-lm'],
@@ -49,7 +49,7 @@ addin_slash_sources = [
 	'src/main_slash.c',
 ]
 
-addin_slash_lib = shared_library('addin_slash',
+addin_slash_lib = shared_library('csh_example_slash',
                          addin_slash_sources,
                          dependencies : [ csp_dep, slash_dep ],
                          link_args : ['-Wl,-Map=cshmodtest.map', '-lm'],
@@ -59,7 +59,7 @@ addin_param_sources = [
 	'src/main_param.c',
 ]
 
-addin_param_lib = shared_library('addin_param',
+addin_param_lib = shared_library('csh_example_param',
                          addin_param_sources,
                          dependencies : [ csp_dep, slash_dep, param_dep ],
                          link_args : ['-Wl,-Map=cshmodtest.map', '-lm'],
