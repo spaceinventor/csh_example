@@ -34,8 +34,11 @@ shared_library( ... ) is used to build the library, .so file.
 
 # Test
 
-The `init/zmq.csh` file initializes CSP, adds ZMQ device and loads the three example addins.
-Observe that `zmqproxy` must be running.
+The `init/zmq.csh` file initializes CSP, adds ZMQ device and loads the three example addins. Observe that `zmqproxy` must be running.
+
+Run `csh -i init/zmq.csh` and observe that the three addins are loaded.
+
+The additional output when loading CSP is output by the libmain function for testing purposes. 
 
 ## Verification
 
