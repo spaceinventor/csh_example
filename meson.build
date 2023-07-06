@@ -3,7 +3,8 @@ project('addin', 'c', subproject_dir: 'lib', default_options: [
 	'buildtype=debug', 
 	'c_std=gnu11', 
 	'b_lto=false',
-    'b_lundef=false'])
+    'b_lundef=false',
+   	'default_library=static'])
 
 add_global_arguments('-I../include', language: 'c')
 
