@@ -32,3 +32,25 @@ All other is the same.
 
 shared_library( ... ) is used to build the library, .so file.
 
+# Test
+
+The `init/zmq.csh` file initializes CSP, adds ZMQ device and loads the three example addins.
+Observe that `zmqproxy` must be running.
+
+## Verification
+
+Run `addin info` to list the loaded addins along with information output from libinfo function, when defined.
+
+## CSP
+
+Run `addin info csp` to get information on the CSP example that defines a libinfo function that outputs ping statistics.
+
+## Param
+
+Run `list` that should list ram_U8, ram_U16, vmem_U8 and vmem_U16 parameters.
+
+## Slash
+
+Run `help` and observe that the `aping` command is listed.
+
+Run `aping 10`.
