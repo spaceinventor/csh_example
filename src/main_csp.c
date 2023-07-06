@@ -36,6 +36,13 @@ static void * ping_task(void * param) {
 
 int libmain(int argc, char ** argv) {
 
+    printf("Arguments passed to libmain:\n");
+    printf("   argc: %d\n", argc);
+    for (int i = 0; i < argc; ++i) {
+        printf("   %d '%s'\n", i, argv[i] ? argv[i] : "null");
+    }
+
+    // Simple example assuming the first argument specifying the destination address.
     if (argc > 1) {
         dst_addr = atoi(argv[1]);
     }

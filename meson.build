@@ -1,27 +1,9 @@
 # Porject options set same as in CSH, except b_lundef=false.
-project('csh', 'c', subproject_dir: 'lib', default_options: [
+project('addin', 'c', subproject_dir: 'lib', default_options: [
 	'buildtype=debug', 
 	'c_std=gnu11', 
 	'b_lto=false',
-    'b_lundef=false',
-	'default_library=static',
-	'csp:packet_padding_bytes=42', 
-	'csp:buffer_count=1000',
-	'csp:buffer_size=2048',
-	'csp:conn_max=20',
-	'csp:conn_rxqueue_len=1000',
-	'csp:qfifo_len=1000',
-	'csp:rdp_max_window=1000',
-	'csp:port_max_bind=16',
-	'csp:have_rtable=true',
-	'param:have_fopen=true', 
-	'param:slash=true', 
-	'param:commands=true',
-	'param:scheduler=true',
-	'param:commands_client=true',
-	'param:scheduler_client=true',
-	'param:collector=false', 
-	'param:list_dynamic=true'])
+    'b_lundef=false'])
 
 add_global_arguments('-I../include', language: 'c')
 
