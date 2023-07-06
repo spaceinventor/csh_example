@@ -43,7 +43,7 @@ static int aping_cmd(struct slash *slash)
 
 	return SLASH_SUCCESS;
 }
-slash_sec_command(addinexample, aping, aping_cmd, "", "aping addin test");
+slash_sec_command(slash_addinexample, aping, aping_cmd, "", "aping addin test");
 
 
 /* libmain and libinfo are not required */
