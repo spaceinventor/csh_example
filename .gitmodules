@@ -7,3 +7,6 @@
 [submodule "lib/param"]
 	path = lib/param
 	url = https://github.com/spaceinventor/libparam
+[submodule "lib/apm_csh"]
+	path = lib/apm_csh
+	url = https://github.com/spaceinventor/libapm_csh

@@ -6,6 +6,9 @@
 #include <param/param_list.h>
 #include <vmem/vmem.h>
 #include <vmem/vmem_ram.h>
+#include <slash/slash.h>
+#include <slash/optparse.h>
+#include <slash/dflopt.h>
 
 
 uint8_t _ram_u8 = 0;
@@ -18,28 +21,8 @@ VMEM_DEFINE_STATIC_RAM(addintest, "addintest", 1024);
 PARAM_DEFINE_STATIC_VMEM(150, vmem_u8, PARAM_TYPE_UINT8, 0, sizeof(uint8_t), PM_CONF, NULL, "", addintest, 0x0, "Test VMEM U8");
 PARAM_DEFINE_STATIC_VMEM(151, vmem_u16, PARAM_TYPE_UINT16, 0, sizeof(uint16_t), PM_CONF, NULL, "", addintest, 0x1, "Test VMEM U16");
 
-
-extern param_t __start_param;
-extern param_t __stop_param;
-
-#if 0
-__attribute__((constructor)) void libinit(void) {
-
+static int apm_example_cmd(struct slash *slash) {
+    printf("APM example cmd\n");
+    return SLASH_SUCCESS;
 }
-#endif
-
-void libmain(int argc, char ** argv) {
-
-    /* Check if we have parameter section defined */
-    if (&__start_param != &__stop_param) {
-
-        for (param_t * param = &__start_param; param < &__stop_param; param += 1) {
-            printf("name %s %p %p %x %p\n", param->name, param, param->addr, param->mask, &param->mask);
-            int ret = param_list_add(param);
-            printf("Result %d\n", ret);
-        }
-
-    }
-}
-
-/* libmain and libinfo are not required */
+slash_command(apm_example, apm_example_cmd, "", "An example of adding a slash command in an APM");
