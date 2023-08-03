@@ -9,6 +9,7 @@
 #include <slash/slash.h>
 #include <slash/optparse.h>
 #include <slash/dflopt.h>
+#include <apm/apm.h>
 
 
 uint8_t _ram_u8 = 0;
