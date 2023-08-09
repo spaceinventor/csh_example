@@ -6,12 +6,12 @@
 #include <slash/optparse.h>
 #include <slash/dflopt.h>
 
-static unsigned int node = 16383;
-static unsigned int timeout = 1000;
-static unsigned int size = 0;
-
 static int aping_cmd(struct slash *slash)
 {
+
+	unsigned int node = 16383;
+	unsigned int timeout = 1000;
+	unsigned int size = 0;
 
     optparse_t * parser = optparse_new("aping", "[node]");
     optparse_add_help(parser);
@@ -42,6 +42,3 @@ static int aping_cmd(struct slash *slash)
 	return SLASH_SUCCESS;
 }
 slash_command(aping, aping_cmd, "", "aping APM test");
-
-
-/* libmain and libinfo are not required */
