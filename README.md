@@ -1,11 +1,11 @@
-# CSH addin examples
+# CSH APM examples
 
 ## CSP example, csh_csp
 
 src/main_csp.c illustrates how to create a task that repeatedly calls csp_ping.
 In CSH, when adding a CSP interface, like ZMQ while zmqproxy is running, and loading csh_csp, pings are done.
 
-The addin info command will show statistics.
+The apm info command will show statistics.
 
 To display packets use set csp_print_packet 1.
 
@@ -24,7 +24,7 @@ When csh_param is loaded into CSH the parameters appear in output from the list 
 
 There are some special settings required when building a dynamic library for defered linking when loaded as a plugin.
 
-b_lundef=false : All functions from libraries, like csp, are undefined when building the addin, which must be allowed.
+b_lundef=false : All functions from libraries, like csp, are undefined when building the APM, which must be allowed.
 
 -PIC : The library may be loaded on any address, so position independent code is required.
 
@@ -34,19 +34,15 @@ shared_library( ... ) is used to build the library, .so file.
 
 # Test
 
-The `init/zmq.csh` file initializes CSP, adds ZMQ device and loads the three example addins. Observe that `zmqproxy` must be running.
+The `init/zmq.csh` file initializes CSP, adds ZMQ device and loads the three example APMs. Observe that `zmqproxy` must be running.
 
-Run `csh -i init/zmq.csh` and observe that the three addins are loaded.
+Run `csh -i init/zmq.csh` and observe that the three APMs are loaded.
 
 The additional output when loading CSP is output by the libmain function for testing purposes. 
 
 ## Verification
 
-Run `addin info` to list the loaded addins along with information output from libinfo function, when defined.
-
-## CSP
-
-Run `addin info csp` to get information on the CSP example that defines a libinfo function that outputs ping statistics.
+Run `apm info` to list the loaded APMs along with information output from libinfo function, when defined.
 
 ## Param
 

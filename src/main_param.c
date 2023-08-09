@@ -18,9 +18,9 @@ PARAM_DEFINE_STATIC_RAM(100, ram_u8, PARAM_TYPE_UINT8, -1, sizeof(uint8_t), PM_C
 uint16_t _ram_u16 = 555;
 PARAM_DEFINE_STATIC_RAM(101, ram_u16, PARAM_TYPE_UINT16, -1, sizeof(uint16_t), PM_CONF, NULL, "", &_ram_u16, "Test RAM U16");
 
-VMEM_DEFINE_STATIC_RAM(addintest, "addintest", 1024);
-PARAM_DEFINE_STATIC_VMEM(150, vmem_u8, PARAM_TYPE_UINT8, 0, sizeof(uint8_t), PM_CONF, NULL, "", addintest, 0x0, "Test VMEM U8");
-PARAM_DEFINE_STATIC_VMEM(151, vmem_u16, PARAM_TYPE_UINT16, 0, sizeof(uint16_t), PM_CONF, NULL, "", addintest, 0x1, "Test VMEM U16");
+VMEM_DEFINE_STATIC_RAM(apmtest, "apmtest", 1024);
+PARAM_DEFINE_STATIC_VMEM(102, vmem_u8, PARAM_TYPE_UINT8, 0, sizeof(uint8_t), PM_CONF, NULL, "", apmtest, 0x0, "Test VMEM U8");
+PARAM_DEFINE_STATIC_VMEM(103, vmem_u16, PARAM_TYPE_UINT16, 0, sizeof(uint16_t), PM_CONF, NULL, "", apmtest, 0x1, "Test VMEM U16");
 
 static int apm_example_cmd(struct slash *slash) {
     printf("APM example cmd\n");

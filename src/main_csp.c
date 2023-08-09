@@ -47,7 +47,7 @@ int libmain(int argc, char ** argv) {
         dst_addr = atoi(argv[1]);
     }
 
-    printf("Ping to addr %u with %u ms timeout. Run addin info for results.\n", (unsigned)dst_addr, (unsigned)timeout);
+    printf("Ping to addr %u with %u ms timeout. Run apm info for results.\n", (unsigned)dst_addr, (unsigned)timeout);
 
 	ping_run = true;
 	pthread_t ping_handle;
@@ -59,7 +59,7 @@ int libmain(int argc, char ** argv) {
 
 void libinfo() {
 
-    printf("Addin with CSP ping task.\n");
+    printf("APM with CSP ping task.\n");
     printf("  Pings: %u  Ok: %u  Delay: %.2f\n", ping_count, ping_ok_count, ping_ok_count ? ((double)ping_delay_sum)/ping_ok_count : -1.0);
 
 }

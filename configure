@@ -1,3 +1,4 @@
 #!/bin/sh
 rm -r builddir
-meson setup . builddir -Dprefix=$HOME/.local
+meson setup . builddir -Dprefix=$HOME/.local -Dlibdir=lib/csh
+
