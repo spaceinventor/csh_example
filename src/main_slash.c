@@ -6,6 +6,12 @@
 #include <slash/optparse.h>
 #include <slash/dflopt.h>
 
+void libinfo(void) {
+
+	printf("This APM is an example of how to add slash and param functionality\n");
+	printf("It also shows how to use Space Inventor's param implementation\n");
+}
+
 static int aping_cmd(struct slash *slash)
 {
 
