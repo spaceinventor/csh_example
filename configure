@@ -1,4 +1,7 @@
-#!/bin/sh
+#!/usr/bin/bash
+prefix="${prefix:-$HOME/.local}"
+libdir="${libdir:-lib/csh}"
+. ./lib/apm_csh/configure_sub
 rm -r builddir
-meson setup . builddir -Dprefix=$HOME/.local -Dlibdir=lib/csh
 
+meson setup . builddir $meson_apm_options -Dprefix=$prefix -Dlibdir=$libdir $*
