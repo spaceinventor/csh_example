@@ -12,5 +12,5 @@ apm_sources = [
 apm_lib = shared_library('csh_example',
                   apm_sources,
                   dependencies : dependencies,
-                  link_args : ['-Wl,-Map=cshmodtest.map', '-lm'],
+                  link_args : ['-Wl,-Map=' + meson.project_name() + '.map', '-lm'],
                   install : true)
