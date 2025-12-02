@@ -6,10 +6,6 @@
 #include <param/param_list.h>
 #include <vmem/vmem.h>
 #include <vmem/vmem_ram.h>
-#include <slash/slash.h>
-#include <slash/optparse.h>
-#include <slash/dflopt.h>
-#include <apm/apm.h>
 
 void param_ramu8_cb(param_t * param, int offset) {
 

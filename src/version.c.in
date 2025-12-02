@@ -1,0 +1,2 @@
+__attribute__((visibility("hidden")))
+const char *csh_example_version_string = "@VCS_TAG@";

@@ -14,3 +14,18 @@ apm_lib = shared_library('csh_example',
                   dependencies : dependencies,
                   link_args : ['-Wl,-Map=' + meson.project_name() + '.map', '-lm'],
                   install : true)
+
+cspftp_posix_srv = executable(
+    meson.project_name() + '_server',
+    [
+        'src/main_param.c',
+        'src/param_posix_srv.c',
+        vcs_tag(input: files('src/version.c.in'), output: 'version.c', command: ['git', 'describe', '--long', '--always', '--dirty=+'])
+    ],
+    dependencies: [
+        dependency('csp', fallback: ['csp', 'csp_dep'], required: true),
+        dependency('param', fallback: ['param', 'param_dep'], required: true),
+    ],
+    link_args : ['-Wl,-Map=' + meson.project_name()  + '_server' + '.map', '-lm', '-lrt'],
+    install: false
+)
