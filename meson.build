@@ -16,7 +16,7 @@ apm_lib = shared_library('csh_example',
                   install : true)
 
 cspftp_posix_srv = executable(
-    meson.project_name() + '_server',
+    'param_example_server',
     [
         'src/main_param.c',
         'src/param_posix_srv.c',
