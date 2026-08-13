@@ -7,7 +7,7 @@
 #include <vmem/vmem.h>
 #include <vmem/vmem_ram.h>
 
-void param_ramu8_cb(param_t * param, int offset) {
+void param_ramu8_cb(const param_t * param, int offset) {
 
     printf("Parameter %s[%d] is set to %d\n", param->name, offset, param_get_uint8_array(param, offset));
 }
