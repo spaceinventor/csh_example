@@ -9,8 +9,12 @@ apm_sources = [
 	'src/main_slash.c',
 ]
 
+linker_script = meson.current_source_dir() / 'linux.ld'
+
 apm_lib = shared_library('csh_example',
-                  apm_sources,
-                  dependencies : dependencies,
-                  link_args : ['-Wl,-Map=' + meson.project_name() + '.map', '-lm'],
-                  install : true)
+    apm_sources,
+    dependencies : dependencies,
+    link_args : ['-Wl,-Map=' + meson.project_name() + '.map', '-lm', '-Wl,--script=' + linker_script],
+	link_depends: linker_script,
+	install : true
+)
